@@ -1,0 +1,20 @@
+{
+  "sessions": [
+    {
+      "id": "f1a7964d-2b2e-44e4-8054-9603f98b5f72",
+      "topic": "学习Python装饰器",
+      "duration": 45,
+      "focus_points": [
+        "基本语法",
+        "带参数的装饰器",
+        "类装饰器"
+      ],
+      "resources": [
+        "Real Python",
+        "Python官方文档"
+      ],
+      "created_at": "2026-03-17T17:08:51.727026"
+    }
+  ],
+  "milestones": []
+}

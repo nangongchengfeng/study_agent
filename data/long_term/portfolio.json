@@ -1,0 +1,19 @@
+{
+  "projects": [],
+  "code_snippets": [
+    {
+      "title": "单例模式实现集锦",
+      "description": "展示Python中实现单例模式的多种方法",
+      "language": "python",
+      "code": "# 装饰器实现\ndef singleton(cls):\n    instances = {}\n    def wrapper(*args, **kwargs):\n        if cls not in instances:\n            instances[cls] = cls(*args, **kwargs)\n        return instances[cls]\n    return wrapper\n\n# 元类实现\nclass SingletonMeta(type):\n    _instances = {}\n    def __call__(cls, *args, **kwargs):\n        if cls not in cls._instances:\n            cls._instances[cls] = super().__call__(*args, **kwargs)\n        return cls._instances[cls]\n\n# 使用\n@singleton\nclass MyClass:\n    pass\n\nclass MyClass2(metaclass=SingletonMeta):\n    pass\n",
+      "tags": [
+        "singleton",
+        "decorator",
+        "metaclass"
+      ],
+      "id": "9d57a1c5-3f3a-453a-991e-4989e25bca8e",
+      "created_at": "2026-03-17T17:08:51.725486",
+      "updated_at": "2026-03-17T17:08:51.725486"
+    }
+  ]
+}
