@@ -8,3 +8,22 @@ wheels/
 
 # Virtual environments
 .venv
+
+# IDE configuration
+.claude/
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+
+# Temporary files
+*.tmp
+*.bak
+
+# Data files (optional, uncomment if you don't want to track)
+# data/
+

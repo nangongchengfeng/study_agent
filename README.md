@@ -79,7 +79,18 @@ python main.py quick
 study_agent/
 ├── app.py                          # Streamlit Web 应用
 ├── main.py                         # 命令行入口
+├── README.md                       # 项目文档
 ├── pyproject.toml                  # 项目配置
+├── .env.example                    # 环境变量示例
+├── config/
+│   └── prompts/                    # Agent 提示词配置
+│       ├── UnderstandingAgent.yaml
+│       ├── MemoryRetrievalAgent.yaml
+│       ├── ExplanationAgent.yaml
+│       ├── ExampleGenerationAgent.yaml
+│       ├── PracticeGenerationAgent.yaml
+│       ├── ValidationAgent.yaml
+│       └── MemoryUpdateAgent.yaml
 ├── src/
 │   ├── workflows/                  # 工作流编排
 │   │   └── teaching_workflow.py   # 主教学工作流
@@ -93,6 +104,7 @@ study_agent/
 │   │   ├── validation_agent.py    # 验证 Agent
 │   │   └── memory_update_agent.py # 记忆更新 Agent
 │   ├── tools/                      # 工具层
+│   │   ├── base_tool.py           # 工具基类
 │   │   ├── code_execution_tool.py # 代码执行工具
 │   │   ├── documentation_retrieval_tool.py # 文档检索工具
 │   │   └── practice_evaluation_tool.py # 练习评估工具
@@ -100,11 +112,19 @@ study_agent/
 │       ├── memory_system.py       # 记忆系统统一接口
 │       ├── sensory_memory.py      # 感觉记忆
 │       ├── short_term_memory.py   # 短期记忆
-│       └── long_term_memory.py    # 长期记忆
-├── config/
-│   └── prompts/                    # Agent 提示词配置
+│       ├── long_term_memory.py    # 长期记忆
+│       ├── memory_store.py        # 记忆存储
+│       └── knowledge_base.py      # 知识库
 ├── data/                           # 数据存储目录
+│   └── long_term/                  # 长期记忆数据
+│       ├── knowledge_graph.json
+│       ├── learning_history.json
+│       └── portfolio.json
+├── images/                         # 文档图片
+│   ├── image.png
+│   └── image-1.png
 └── tests/                          # 测试文件
+    └── test_workflow.py
 ```
 
 ## 🎯 教学工作流
@@ -169,6 +189,7 @@ python tests/test_workflow.py
 # 或使用 pytest
 pytest tests/test_workflow.py -v
 ```
+
 
 ## 📄 许可证
 
